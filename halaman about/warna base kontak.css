@@ -1,0 +1,160 @@
+form{
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: slideUp 1s ease-out;
+}
+
+form label {
+    color: #38bdf8;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+form input, form textarea {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color:  #38bdf8 !important;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.1) !important;
+    transform: scale(1.02);
+}
+
+@keyframes slideUp {
+    form { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: white;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    animation: muncul 1s ease-out;
+}
+
+h1 {
+    text-align: center;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+p {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    background: rgba(15, 23, 42, 0.7);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    background: rgba(15, 23, 42, 0.9);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #38bdf8, #3b82f6);
+    border: none;
+    border-radius: 12px;
+    color: #0f172a;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #3b82f6, #38bdf8);
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
+    transform: scale(1.05);
+}
+
+@keyframes muncul {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Posisi wadah tombol di pojok bawah kiri */
+.wa-floating-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    text-decoration: none;
+    overflow: hidden; /* Memotong space kosong gambar */
+    border-radius: 50%;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+    
+    /* Animasi halus muncul dari bawah saat halaman dibuka */
+    animation: munculDariBawah 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+}
+
+/* Penyesuaian skala gambar agar pas ke lingkaran */
+.wa-floating-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.9); /* Memotong pinggiran transparan bawaan foto */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: block;
+}
+
+/* Logika Jalur Animasi Muncul dari Bawah */
+@keyframes munculDariBawah {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

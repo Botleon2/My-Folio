@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Leon</title>
+    <link rel="stylesheet" href="warna base kontak.css">
+    
+    <style>
+        /* CSS untuk posisi tombol di pojok bawah kiri */
+        .wa-floating-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            z-index: 1000;
+            text-decoration: none;
+            
+            /* Memicu fungsi animasi saat halaman dimuat */
+            animation: munculDariBawah 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0; /* Mulai dari transparan */
+        }
+
+        /* Desain gambar logo di dalam tombol melayang */
+        .wa-floating-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+            box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Efek interaksi halus saat kursor menyentuh logo */
+        .wa-floating-btn:hover img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Keyframes Logika Animasi Halus Muncul dari Bawah */
+        @keyframes munculDariBawah {
+            0% {
+                transform: translateY(100px); /* Mulai dari posisi 100px di bawah layar */
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0); /* Berhenti di posisi normal */
+                opacity: 1; /* Menjadi terlihat penuh */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container" style="padding-top: 50px">
+        <h1>Hubungi Leon</h1>
+        <p>Ada Keluhan atau Ide dan saran buat proyek yang seru? Mari kita diskusikan!</p>
+
+        <form style="margin-top: 30px; text-align: left; max-width: 500px; margin-inline: auto;">
+            <div style="margin-bottom: 15px;">
+                <label>Nama Lengkap</label><br>
+                <input type="text" placeholder="Masukan nama anda..." style="width: 100%; padding: 10px; margin-top: 5px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>Email Aktif</label><br>
+                <input type="email" placeholder="Masukan email anda..." style="width: 100%; padding: 10px; margin-top: 5px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>Pesan</label><br>
+                <textarea placeholder="Tuliskan pesan anda di sini..." style="width: 100%; padding: 10px; margin-top: 5px; height: 150px;"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+
+        <br>
+        <a href="../index.html" style="color: #38bdf8">Kembali ke Halaman Utama</a>
+    </div>
+
+    <!-- TOMBOL WHATSAPP MENGGUNAKAN LOGO GAMBAR ANDA -->
+    <!-- Catatan: Ganti 'nama_file_logo_wa.png' dengan nama file gambar logo WhatsApp yang Anda simpan di folder project -->
+    <a href="wa.me..." class="wa-floating-btn" target="_blank" rel="noopener noreferrer">
+        <img src="logo wa.jpg" alt="WhatsApp Admin">
+    </a>
+
+</body>
+</html>

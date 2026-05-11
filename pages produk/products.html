@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Leon Store</title>
+    <link href="warna produk.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">Leon Store</div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#" class="active">Products</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1 class="title">Produk & Jasa</h1>
+        <div class="product-grid">
+        
+            <!-- Produk 1 -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="alight motion.jpeg" alt="Alight Motion Pro">
+                </div>
+                <h3>Alight Motion Pro</h3>
+                <p>CARA BELI: 1x ARTINYA BELI 1 TAHUN DAN SETERUS NYA.</p>
+                <button class="btn" onclick="openOrder('Alight Motion Pro', 'Software editing video profesional dengan fitur Pro yang lengkap.', 10000)">Beli Sekarang</button>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="agen preflix.jpeg" alt="Agen Preflix">
+                </div>
+                <h3>Agen Preflix</h3>
+                <p>APK Jualan Online Lengkap Bisa Jual Pulsa, Token Listrik, Aplikasi Premium, dan lainnya.</p>
+                <button class="btn" onclick="openOrder('Agen Preflix', 'APK Jualan Online Lengkap Bisa Jual Pulsa, Token Listrik, Aplikasi Premium, dan lainnya.', 65000)">Beli Sekarang</button>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="proyek edit.jpg" alt="Jasa Edit Video JJ">
+                </div>
+                <h3>Jasa Edit Video JJ</h3>
+                <p>Layanan jasa edit video profesional untuk kebutuhan beli 1x artinya 15detik.</p>
+                <button class="btn" onclick="openOrder('Jasa Edit Video JJ', 'Layanan jasa edit video profesional untuk kebutuhan.', 15000)">Beli Sekarang</button>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="tutor am.jpeg" alt="Tutor Alight Motion">
+                </div>
+                <h3>Tutor Alight Motion</h3>
+                <p>Bisa jualan Alight Motion Pro 0RP.</p>
+                <button class="btn" onclick="openOrder('Tutor Alight Motion', 'Bisa jualan Alight Motion Pro 0RP.', 100000)">Beli Sekarang</button>
+            </div>
+
+            <!-- Produk 5 -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="jasa website.jpg" alt="Jasa Buat Website">
+                </div>
+                <h3>Jasa Buat Website</h3>
+                <p>Layanan jasa pembuatan website profesional untuk kebutuhan bisnis beli 1x artinya 1 halaman.</p>
+                <button class="btn" onclick="openOrder('Jasa Buat Website', 'Layanan jasa pembuatan website profesional untuk kebutuhan bisnis.', 50000)">Beli Sekarang</button>
+            </div>
+        </div>
+    </main>
+    <!---overlay gelap--->
+    <div id="overlay" onclick="closeOrder()"></div>
+
+    <!-- panel pembelian -->
+    <div id="orderModal" class="modal">
+        <div class="modal-header">
+            <h3>Detail Pembelian</h3>
+            <span class="close-btn" onclick="closeOrder()">&times;</span>
+        </div>
+
+        <div class="modal-body">
+            <p id="productname" style="font-weight: bold; color: #007bff;"></p>
+            <p id="productdesc" style="font-size: 0.9em; color: #555; margin-top: 15px;"></p>
+
+            <label>Nama Anda:</label>
+            <input type="text" id="buyerName" placeholder="Masukkan nama Anda">
+
+            <label>Email Anda:</label>
+            <input type="email" id="buyerEmail" placeholder="contoh@gmail.com">
+
+            <label>Jumlah Beli:</label>
+            <input type="number" id="quantity" value="1" min="1" min="1" oninput="updateTotal()">
+            
+            <div class="total-section">
+                <span>Total Harga:</span>
+                <span id="totalPrice">Rp 0</span>
+            </div>
+
+            <button class="comfrim-btn" onclick="sumbitOrder()">Konfirmasi Pembelian</button>
+        </div>
+    </div>
+
+    <script src="order.js"></script>
+</body>
+</html>
