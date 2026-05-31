@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="warna base kontak.css">
     
     <style>
-        /* CSS untuk posisi tombol di pojok bawah kiri */
         .wa-floating-btn {
             position: fixed;
             bottom: 20px;
@@ -17,12 +16,10 @@
             z-index: 1000;
             text-decoration: none;
             
-            /* Memicu fungsi animasi saat halaman dimuat */
             animation: munculDariBawah 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            opacity: 0; /* Mulai dari transparan */
+            opacity: 0; 
         }
 
-        /* Desain gambar logo di dalam tombol melayang */
         .wa-floating-btn img {
             width: 100%;
             height: 100%;
@@ -32,20 +29,18 @@
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* Efek interaksi halus saat kursor menyentuh logo */
         .wa-floating-btn:hover img {
             transform: scale(1.1) rotate(5deg);
         }
 
-        /* Keyframes Logika Animasi Halus Muncul dari Bawah */
         @keyframes munculDariBawah {
             0% {
-                transform: translateY(100px); /* Mulai dari posisi 100px di bawah layar */
+                transform: translateY(100px); 
                 opacity: 0;
             }
             100% {
-                transform: translateY(0); /* Berhenti di posisi normal */
-                opacity: 1; /* Menjadi terlihat penuh */
+                transform: translateY(0); 
+                opacity: 1; 
             }
         }
     </style>
@@ -79,8 +74,6 @@
         <a href="../index.html" style="color: #38bdf8">Kembali ke Halaman Utama</a>
     </div>
 
-    <!-- TOMBOL WHATSAPP MENGGUNAKAN LOGO GAMBAR ANDA -->
-    <!-- Catatan: Ganti 'nama_file_logo_wa.png' dengan nama file gambar logo WhatsApp yang Anda simpan di folder project -->
     <a href="https://wa.me/6285891729388" class="wa-floating-btn" target="_blank" rel="noopener noreferrer">
         <img src="logo wa.jpg" alt="WhatsApp Admin">
     </a>
